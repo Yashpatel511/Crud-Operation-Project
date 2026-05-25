@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>User Management System</h1>
+            <p>A simple CRUD application with REST API</p>
+        </header>
+
+        <section class="form-section">
+            <h2>Add/Edit User</h2>
+            <form id="user-form">
+                <input type="hidden" id="user-id">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="Enter phone number">
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" id="submit-btn">Add User</button>
+                    <button type="button" id="cancel-btn" class="hidden">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="users-section">
+            <h2>Users List</h2>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search users...">
+            </div>
+            <div id="loading" class="loading">Loading...</div>
+            <div id="error-message" class="error-message"></div>
+            <table id="users-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="users-list">
+                    <!-- User data will be populated here -->
+                </tbody>
+            </table>
+            <div id="no-users" class="no-data hidden">No users found</div>
+        </section>
+
+        <div id="toast" class="toast"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
